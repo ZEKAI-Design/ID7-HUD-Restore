@@ -1,0 +1,27 @@
+{
+  "id": "zekai_hud_restore",
+  "title": "HUD Restore",
+  "vendor": "ZEKAI Design",
+  "version": "1.0.0",
+  "loggingId": "ZHR1",
+  "description": "Restore the shared iDrive 7 Cluster renderer HUD canvas to 800 x 480.",
+  "iconGlyph": "HUD",
+  "mguHmi": ["ID7"],
+  "signals": {
+    "de.bmw.infotainment.vehicle.Vehicle2": {
+      "statusCarSpeed2": "rs"
+    }
+  },
+  "screens": [{
+    "name": "MAIN",
+    "kind": "menu",
+    "title": "HUD Restore",
+    "items": [
+      ["header", "CANVAS", "Shared HUD canvas"],
+      ["text", "CURRENT", "Checking renderer configuration..."],
+      ["text", "PARK", "Park the vehicle and keep iDrive awake."],
+      ["button", "RESTORE", "Restore HUD to 800 x 480"],
+      ["text3", "STATUS", "The restored canvas takes effect after iDrive restarts."]
+    ]
+  }]
+}

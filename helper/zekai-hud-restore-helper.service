@@ -1,0 +1,21 @@
+[Unit]
+Description=ZEKAI HUD Restore configuration helper
+After=local-fs.target
+RequiresMountsFor=/var/opt
+
+[Service]
+User=root
+Group=tm_oap_app
+RuntimeDirectory=zekai-hud-restore
+RuntimeDirectoryMode=0750
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=full
+ProtectHome=yes
+ExecStart=/usr/bin/node /var/opt/zekai-hud-restore-helper/current/restore.js
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

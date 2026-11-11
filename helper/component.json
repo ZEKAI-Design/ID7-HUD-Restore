@@ -1,0 +1,14 @@
+{
+  "id": "zekai-hud-restore-helper",
+  "kind": "tool",
+  "version": "1.0.0",
+  "title": "HUD Restore Helper",
+  "description": "Backs up and restores the iDrive 7 Cluster renderer HUD canvas.",
+  "mguHmi": ["ID7"],
+  "requires": {"mgu-deploy": "0.7.11", "cluster-render": "0.3.10"},
+  "uninstallable": true,
+  "files": [{"path": "restore.js", "mode": "0644"}],
+  "units": [{"name": "zekai-hud-restore-helper.service"}],
+  "enable": [{"unit": "zekai-hud-restore-helper.service", "target": "multi-user.target"}],
+  "restart": ["zekai-hud-restore-helper.service"]
+}
